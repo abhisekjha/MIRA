@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    @apply bg-obsidianBlack text-moonlitSilver;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-solarPurple/20 text-quantumCyan;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl font-bold bg-aurora-glow bg-clip-text text-transparent;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold text-auroraBlue;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold text-quantumCyan;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold text-solarPurple;
+  }
+
+  p {
+    @apply text-base md:text-lg text-moonlitSilver;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-aurora-glow bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute -inset-0.5 bg-nebula-edge rounded-lg blur opacity-25 transition-opacity duration-500;
+  }
+
+  .gradient-border:hover::before {
+    @apply opacity-50;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-aurora-glow hover:animate-glow text-lunarWhite shadow-lg shadow-auroraBlue/25;
+  }
+
+  .btn-secondary {
+    @apply bg-mistGray hover:bg-cosmic-sunset text-moonlitSilver border border-moonlitSilver/10;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-mistGray/50 border border-moonlitSilver/10 rounded-lg 
+    focus:outline-none focus:border-solarPurple text-moonlitSilver placeholder-moonlitSilver/50;
+  }
+
+  .card {
+    @apply p-6 rounded-2xl bg-mistGray/50 border border-moonlitSilver/10 
+    hover:border-solarPurple/50 transition-all backdrop-blur-sm;
+  }
+
+  .glow-effect {
+    @apply relative;
+  }
+
+  .glow-effect::before {
+    content: '';
+    @apply absolute inset-0 bg-aurora-glow opacity-0 blur-xl transition-opacity duration-300;
+  }
+
+  .glow-effect:hover::before {
+    @apply opacity-20;
+  }
+}
